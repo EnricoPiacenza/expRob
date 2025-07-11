@@ -37,7 +37,9 @@ ros2 launch robot_urdf gazeboRobot.launch.py
 ## Nodes 🪢
 
 **moveRobot**
+The node is designed to control a robot to detect and respond to ArUco markers using camera input. the robot publishes on the topic ```/cmd_vel``` the actuation commands, subscribes to the topic ```/aruco_markers``` to retrieve information about the markers and to the topic ```/camera/image_raw``` to process camera data.
 
-
-
+- ```status_ = 1```: the robot rotates until it identifies all five markers present. 
+- ```status_ = 2```: the robot rotates in order to reach the desired marker, using openCV a photo is taken highlighting the marker with a red circle.
+- ```status_ = 3```: task ended.
 
