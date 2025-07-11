@@ -21,10 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'aruco_node = ros2_aruco.aruco_node:main',
-            'aruco_generate_marker = ros2_aruco.aruco_generate_marker:main',
-            'RobotNode = ros2_aruco.RobotNode:main',
-            'robotNode = ros2_aruco.robotNodeB:main',
-            'cameraNode = ros2_aruco.cameraNode:main'
+            'robot_node = ros2_aruco.moveRobot:main',
+            'aruco_generate_marker = ros2_aruco.aruco_generate_marker:main'
         ],
     },
 )

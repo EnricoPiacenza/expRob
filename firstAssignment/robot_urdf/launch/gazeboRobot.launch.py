@@ -48,16 +48,12 @@ def generate_launch_description():
     )
     
     Robot_node = Node(
-        package='ros2_aruco',  
-        executable='robotNode',  
-        output='screen',
+        package='ros2_aruco',
+        executable='robot_node',
+        output='screen'
     )
-    
-    Camera_Node = Node(
-        package='ros2_aruco',  
-        executable='cameraNode',
-        output='screen',
-    )
+
+
     
     # GAZEBO_MODEL_PATH has to be correctly set for Gazebo to be able to find the model
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
@@ -71,9 +67,8 @@ def generate_launch_description():
         joint_state_publisher_node,
         camera_controller, #COMMENTA
         spawn_entity,
-        #Camera_Node, #commenta se vuoi muovere il robot
         Aruco_node,
-        Robot_node, #Commenta se vuoi muovere la camera
+        Robot_node,
         ExecuteProcess(
             cmd=['gazebo', '--verbose', default_world_path, '-s', 'libgazebo_ros_factory.so'],
             output='screen'),
